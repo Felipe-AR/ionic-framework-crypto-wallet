@@ -1,0 +1,26 @@
+.header__title__text {
+  font-weight: bold;
+}
+
+.content {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 0px;
+}
+
+.content__item {
+  border-radius: 10px;
+}
+
+.content__item__thumbnail {
+  margin: 0px 0 5px 5px;
+}
+
+.content__item__input {
+  border: 5px solid transparent;
+}
+
+.content__item_input:hover {
+  border: 5px solid #8757e5;
+}

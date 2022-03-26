@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title color="light">
+      <ion-text class="header__title__text">
+        🚀 Details
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item>
+  <ion-button color="primary" (click)="goBackToHomePage()">Go back</ion-button>
+  <ion-button color="danger" (click)="removeAllCryptoCurrencies()">Clean Wallet</ion-button>
+</ion-item>
+
+<ion-content>
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-text [color]="message.color">
+        <small>{{ message.description }}</small>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+
+  <ion-list class="content" *ngFor="let crypto of cryptoCurrencies">
+    <ion-card color="light" class="content__item">
+      <ion-card-content>
+        <ion-thumbnail slot="start" class="content__item__thumbnail">
+          <img [src]="crypto.image.large" alt="crypto.name">
+        </ion-thumbnail>
+        <small>
+          <p><strong>Date: </strong>{{ crypto.created_at | date }}</p>
+          <p><strong>Name: </strong>{{ crypto.name }}</p>
+          <p><strong>Spent: </strong>{{ crypto.spent | currency }}</p>
+          <p><strong>Amount: </strong>{{ crypto.amount }}</p>
+          <p><strong>Current: </strong>{{ crypto.current | currency }}</p>
+          <p><strong>Profit: </strong>{{ crypto.percentage | percent }}</p>
+        </small>
+        <ion-button border-radius="50" size="small" color="danger" (click)="removeCryptoCurrency(crypto.id)">
+          <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
