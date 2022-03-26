@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseAPI: 'https://api.coingecko.com/api/v3/',
+  baseAPI_query:
+    '?location=false&tickers=false&community_data=false&developer_data=false&sparkline=false',
 };
 
 /*
