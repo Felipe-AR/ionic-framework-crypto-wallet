@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title color="light">
+      <ion-text class="header__title__text">
+        🚀 Crypto Wallet
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list class="content">
+    <ion-item color="light" class="content__item">
+      <ion-label color="dark">Name: </ion-label>
+      <ion-input class="content__item__input" [(ngModel)]="name" type="text"></ion-input>
+    </ion-item>
+    <ion-item color="light" class="content__item">
+      <ion-label color="dark">Spent: </ion-label>
+      <ion-input class="content__item__input" [(ngModel)]="spent" type="number" min="0">
+      </ion-input>
+    </ion-item>
+    <ion-item color="light" class="content__item">
+      <ion-label color="dark">Amount: </ion-label>
+      <ion-input class="content__item__input" [(ngModel)]="amount" type="number" min="0">
+      </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div class="content">
+    <ion-button color="success" round expand="block" (click)="checkWallet()">Check Wallet</ion-button>
+    <ion-button color="primary" round expand="block" (click)="addCryptoInWallet()">Add to Wallet</ion-button>
+    <ion-button color="warning" round expand="block" (click)="cancelOperation()">Cancel</ion-button>
+  </div>
+
+  <ion-row class="ion-text-center">
+    <ion-col>
+      <ion-text color="danger">
+        <small>{{ message }}</small>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+</ion-content>
