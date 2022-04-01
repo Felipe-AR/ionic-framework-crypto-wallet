@@ -1,0 +1,18 @@
+<ion-card color="light" class="content__item">
+  <ion-card-content>
+    <ion-thumbnail slot="start" class="content__item__thumbnail">
+      <img [src]="cryptoCurrency.image.large" alt="cryptoCurrency.name">
+    </ion-thumbnail>
+    <small>
+      <p><strong>Date: </strong>{{ cryptoCurrency.created_at | date }}</p>
+      <p><strong>Name: </strong>{{ cryptoCurrency.name }}</p>
+      <p><strong>Spent: </strong>{{ cryptoCurrency.spent | currency }}</p>
+      <p><strong>Amount: </strong>{{ cryptoCurrency.amount }}</p>
+      <p><strong>Current: </strong>{{ cryptoCurrency.current | currency }}</p>
+      <p><strong>Profit: </strong>{{ cryptoCurrency.percentage | percent }}</p>
+    </small>
+    <ion-button border-radius="50" size="small" color="danger" (click)="removeCrypto(cryptoCurrency.id)">
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-button>
+  </ion-card-content>
+</ion-card>
