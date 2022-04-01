@@ -7,9 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { DetalhesPageRoutingModule } from './detalhes-routing.module';
 
 import { DetalhesPage } from './detalhes.page';
+import { DetalhesCryptoComponent } from 'src/app/shared/components/detalhes-crypto/detalhes-crypto.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, DetalhesPageRoutingModule],
-  declarations: [DetalhesPage],
+  declarations: [DetalhesPage, DetalhesCryptoComponent],
 })
 export class DetalhesPageModule {}
